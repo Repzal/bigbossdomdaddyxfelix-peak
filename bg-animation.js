@@ -27,7 +27,7 @@ function randomBetween(a, b) {
   return a + Math.random() * (b - a);
 }
 
-let bubbles = Array.from({length: 23}, () => ({
+let bubbles = Array.from({length: 32}, () => ({
   x: randomBetween(0, canvas.width),
   y: randomBetween(0, canvas.height),
   r: randomBetween(55, 120),
@@ -44,7 +44,7 @@ function animate() {
   bubbles.forEach(bub => {
     ctx.save();
     ctx.globalAlpha = bub.opacity;
-    ctx.filter = 'blur(11px)';
+    ctx.filter = 'blur(13px)';
     ctx.beginPath();
     ctx.arc(bub.x, bub.y, bub.r, 0, Math.PI * 2);
     ctx.fillStyle = bub.color;
